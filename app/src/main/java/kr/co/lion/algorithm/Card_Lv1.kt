@@ -52,3 +52,26 @@ fun main() {
     val goal2 = arrayOf("i", "want", "to", "drink", "water")
     println(solution(cards1_2, cards2_2, goal2)) // "No"
 }
+
+// forEach 확장함수를 이용해서 적용할 수 있음
+//fun solution(cards1: Array<String>, cards2: Array<String>, goal: Array<String>): String {
+//    var idx1 = 0
+//    var idx2 = 0
+//
+//    goal.forEach { word ->
+//        // cards1에서 단어 확인
+//        if (idx1 < cards1.size && cards1[idx1] == word) {
+//            idx1++
+//        }
+//        // cards1이 아니라면 cards2에서 단어 확인
+//        else if (idx2 < cards2.size && cards2[idx2] == word) {
+//            idx2++
+//        } else {
+//            // 두 카드 뭉치 어디에도 현재 단어가 없다면 곧바로 함수 종료
+//            return "No"
+//        }
+//    }
+//
+//    // goal을 끝까지 성공적으로 만들었다면
+//    return "Yes"
+//}
