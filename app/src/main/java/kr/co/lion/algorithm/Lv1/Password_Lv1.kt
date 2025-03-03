@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 
 // 문제 설명

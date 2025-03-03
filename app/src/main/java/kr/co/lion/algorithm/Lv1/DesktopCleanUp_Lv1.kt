@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 //문제 설명
 //코딩테스트를 준비하는 머쓱이는 프로그래머스에서 문제를 풀고 나중에 다시 코드를 보면서 공부하려고 작성한 코드를 컴퓨터 바탕화면에 아무 위치에나 저장해 둡니다.

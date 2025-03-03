@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 //문제 설명
 //과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며,

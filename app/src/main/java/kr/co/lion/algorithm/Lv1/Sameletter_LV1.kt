@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 fun solution(s: String): List<Int> {
     val answer = mutableListOf<Int>()

@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 //문제 설명
 //문자열 s가 입력되었을 때 다음 규칙을 따라서 이 문자열을 여러 문자열로 분해하려고 합니다.

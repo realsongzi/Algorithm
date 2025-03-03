@@ -1,4 +1,4 @@
-package kr.co.lion.algorithm
+package kr.co.lion.algorithm.Lv1
 
 // 문제 설명
 // 코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다.
