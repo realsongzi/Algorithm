@@ -60,3 +60,80 @@ fun main() {
 
     // 추가 테스트: 여러 케이스를 더 작성할 수 있습니다.
 }
+
+// 기존에 작성했던 코드가 시간복잡도 O(2^N)으로
+// 더 효율적인 DP를 활용해서 중복 연산을 줄여보자
+// DP 적용 후 O(N * S)
+// 오류 (StackOverflowError) 발생
+//class Solution {
+//    fun solution(numbers: IntArray, target: Int): Int {
+//        val memo = mutableMapOf<Pair<Int, Int>, Int>() // DP 캐시
+//
+//        fun dfs(index: Int, sum: Int): Int {
+//            if (index == numbers.size) return if (sum == target) 1 else 0
+//
+//            // 메모이제이션 (이전 계산 값이 있으면 그대로 반환)
+//            val key = Pair(index, sum)
+//            if (memo.containsKey(key)) return memo[key]!!
+//
+//            // 현재 숫자를 더하거나 빼는 경우의 수 계산
+//            val count = dfs(index + 1, sum + numbers[index]) + dfs(index + 1, sum - numbers[index])
+//
+//            // 결과 저장
+//            memo[key] = count
+//            return count
+//        }
+//        return dfs(0, 0)
+//    }
+//}
+
+
+// 꼬리재귀 (Tail Recursion) 적용
+// Kotlin의 teilrec 키워드를 사용하면 꼬리 재귀 최적화(TCE, Tail Call Optimization) 이 적용됨
+// 꼬리 재귀를 적용하면, 재귀 호출을 반복문으로 변환하여 스택 오버플로우를 방지한다.
+//class Solution {
+//    fun solution(numbers: IntArray, target: Int): Int {
+//        val memo = mutableMapOf<Pair<Int, Int>, Int>()
+//
+//        tailrec fun dfs(index: Int, sum: Int): Int {
+//            if (index == numbers.size) return if (sum == target) 1 else 0
+//
+//            val key = Pair(index,sum)
+//            if (memo.containsKey(key)) return memo[key]!!
+//
+//            val left = dfs(index + 1, sum + numbers[index])
+//            val right = dfs(index + 1, sum - numbers[index])
+//
+//            memo[key] = left + right
+//            return memo[key]!!
+//        }
+//        return dfs(0,0)
+//    }
+//}
+
+// BFS (반복문) 을 사용하여 풀어보기
+// WHY? DP(재귀)보다 BFS(큐) 방식이 더 직관적이고 안정적인 성능을 가지며
+// DFS는 스택 오버플로우 위험이 있고, DP는 구현이 다소 어려울 수 있으나, BFS는 가장 간단하게 해결 가능하다.
+// 모든 경우를 큐에 저장하고, 반복문으로 탐색한다.
+
+//import java.util.*
+//
+//class Solution {
+//    fun solution(numbers: IntArray, target: Int): Int {
+//        var count = 0
+//        val queue: Queue<Pair<Int, Int>> = LinkedList()
+//        queue.add(Pair(0, 0)) // (현재 index, 현재 sum)
+//
+//        while (queue.isNotEmpty()) {
+//            val (index, sum) = queue.poll()
+//
+//            if (index == numbers.size) {
+//                if (sum == target) count++
+//            } else {
+//                queue.add(Pair(index + 1, sum + numbers[index]))
+//                queue.add(Pair(index + 1, sum - numbers[index]))
+//            }
+//        }
+//        return count
+//    }
+//}
