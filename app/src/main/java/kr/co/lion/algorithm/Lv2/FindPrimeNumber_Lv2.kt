@@ -11,7 +11,7 @@ class FindPrimeNumber_Lv2 {
         return numSet.count { isPrime(it) }
     }
 
-    // 최적화된 소수 판별 함수
+    // 소수 판별 함수
     private fun isPrime(n: Int): Boolean {
         if (n < 2) return false
         if (n == 2 || n == 3) return true
